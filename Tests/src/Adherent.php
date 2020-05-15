@@ -6,6 +6,14 @@ class Adherent {
     private $id;
 
     // Methods
+    public function __construct(string $lastname, string $firstname, DateTime $birthdate) {
+        $this->id=self::concatenate_id($lastname,$firstname,$birthdate);
+    }
+
+    public static function concatenate_id(string $lastname, string $firstname, DateTime $birthdate) {
+        return strtoupper((self::skip_accents($lastname)).strtoupper(self::skip_accents($firstname)).$birthdate->format('Y-m-d'));
+    }
+
     // Aide : https://murviel-info-beziers.com/fonction-php-supprimer-accents/
     public static function skip_accents(string $string) {
         $charset='utf-8';
