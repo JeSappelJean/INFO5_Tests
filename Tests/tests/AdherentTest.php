@@ -9,8 +9,8 @@ class AdherentTest extends TestCase {
     // Test 1 : Verifier si l'on outrepasse les accents
     public function testAccentSkipped(): void {
         $this->assertEquals(
-            'JeanCome',
-            Adherent::skip_accents('Jean-Côme')
+            'Come',
+            Adherent::skip_accents('Côme')
         );
     }
 
