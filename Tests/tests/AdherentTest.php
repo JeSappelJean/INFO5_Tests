@@ -14,4 +14,12 @@ class AdherentTest extends TestCase {
         );
     }
 
+    // Test 2 : Vérifier si l'id est concaténé correctement
+    public function testConcatenation(): void {
+        $this->assertEquals(
+            'STEPHANEBONHOMME1964-03-08',
+            Adherent::concatenate_id('Stéphane','Bonhomme',new DateTime('1964-03-08'))
+        );
+    }
+
 }
